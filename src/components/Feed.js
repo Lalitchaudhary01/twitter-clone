@@ -1,7 +1,12 @@
 import React from "react";
+import CreatePost from "./CreatePost";
 
 const Feed = () => {
-  return <div>Feed</div>;
+  return (
+    <div className="w-[50%] ">
+      <CreatePost />
+    </div>
+  );
 };
 
 export default Feed;
