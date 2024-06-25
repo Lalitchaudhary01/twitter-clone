@@ -1,5 +1,10 @@
-export const USER_API_END_POINT = "http://localhost:8080/api/v1/user";
-export const TWEET_API_END_POINT = "http://localhost:8080/api/v1/tweet";
+REACT_APP_API_BASE_URL = "https://twitter-backend-tau.vercel.app";
+
+const API_BASE_URL =
+  process.env.REACT_APP_API_BASE_URL || "http://localhost:8080";
+
+export const USER_API_END_POINT = `${API_BASE_URL}/api/v1/user`;
+export const TWEET_API_END_POINT = `${API_BASE_URL}/api/v1/tweet`;
 
 export const timeSince = (timestamp) => {
   let time = Date.parse(timestamp);
@@ -21,7 +26,7 @@ export const timeSince = (timestamp) => {
     let interval = intervals[i];
     if (secondsPast >= interval) {
       let count = Math.floor(secondsPast / interval);
-      return `${count} ${i} ${count > 1 ? "s" : ""} ${suffix}`;
+      return `${count} ${i}${count > 1 ? "s" : ""} ${suffix}`;
     }
   }
 };
